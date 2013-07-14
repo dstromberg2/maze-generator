@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>Maze</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="mazegenerator.js"></script>
+<style type="text/css">
+#maze {
+    border-collapse: collapse;
+}
+
+#maze td {
+    width: 20px;
+    height: 20px;
+}
+</style>
+</head>
+<body>
+
+<table id="maze">
+<tbody></tbody>
+</table>
+
+<script>
+    var disp = newMaze(20,20);
+    for (var i = 0; i < disp.length; i++) {
+        $('#maze > tbody').append("<tr>");
+        for (var j = 0; j < disp[i].length; j++) {
+            var selector = i+"-"+j;
+            $('#maze > tbody').append("<td id='"+selector+"'>&nbsp;</td>");
+            if (disp[i][j][0] == 0) { $('#'+selector).css('border-top', '2px solid black'); }
+            if (disp[i][j][1] == 0) { $('#'+selector).css('border-right', '2px solid black'); }
+            if (disp[i][j][2] == 0) { $('#'+selector).css('border-bottom', '2px solid black'); }
+            if (disp[i][j][3] == 0) { $('#'+selector).css('border-left', '2px solid black'); }
+        }
+        $('#maze > tbody').append("</tr>");
+    }
+</script>
+
+</body>
+</html>
