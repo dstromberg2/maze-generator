@@ -22,9 +22,9 @@ function newMaze(x, y) {
     // Loop through all available cell positions
     while (visited < totalCells) {
         // Determine neighboring cells
-        var pot = [[currentCell[0]+1, currentCell[1], 2, 0],
+        var pot = [[currentCell[0]-1, currentCell[1], 0, 2],
                 [currentCell[0], currentCell[1]+1, 1, 3],
-                [currentCell[0]-1, currentCell[1], 0, 2],
+                [currentCell[0]+1, currentCell[1], 2, 0],
                 [currentCell[0], currentCell[1]-1, 3, 1]];
         var neighbors = new Array();
         
